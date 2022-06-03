@@ -9,7 +9,7 @@ module.exports.brandController = {
         name: req.body.name,
         description: req.body.description,
       })
-      res.json("Брэнд добавлен")
+      res.json(postBrand)
     } catch (error) {
       res.json(error)
     }
@@ -17,7 +17,7 @@ module.exports.brandController = {
   deleteBrand: async (req, res) => {
     try {
       const deleteBrand = await Brand.findByIdAndRemove(req.params.id)
-      res.json("Брэнд удален")
+      res.json(deleteBrand)
     } catch (error) {
       res.json(error)
     }
@@ -28,24 +28,24 @@ module.exports.brandController = {
         name: req.body.name,
         description: req.body.description,
       })
-      res.json("Брэнд изменен")
+      res.json(patchBrand)
     } catch (error) {
       res.json(error)
     }
   },
-  getBrand: async(req, res) => {
+  getBrand: async (req, res) => {
     try {
       const getBrand = await Brand.find();
       res.json(getBrand);
-    }catch (error) {
+    } catch (error) {
       res.json(error)
     }
   },
-  getBrandById: async(req, res) => {
+  getBrandById: async (req, res) => {
     try {
       const getBrandById = await Brand.findById(req.params.id);
       res.json(getBrandById);
-    }catch (error) {
+    } catch (error) {
       res.json(error)
     }
   }
