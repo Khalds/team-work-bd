@@ -9,10 +9,6 @@ const productSchema = mongoose.Schema({
   brand: {
     ref: 'Brand',
     type: mongoose.SchemaTypes.ObjectId
-  },
-  review: {
-    ref: 'Review',
-    type: mongoose.SchemaTypes.ObjectId
   }
 })
 
